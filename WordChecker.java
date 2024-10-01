@@ -1,13 +1,21 @@
-import java.util.List;
 import java.util.ArrayList;
 
 public class WordChecker {
     /** Initialized in the constructor and contains no null elements */
     private ArrayList<String> wordList;
     private int count = 0;
+    private ArrayList<String> newWordList;
 
     public WordChecker(ArrayList<String> wList){
         wordList = wList;
+    }
+
+    public void printList(){
+        System.out.println(wordList);
+        // System.out.println(wordList.get(1));
+        // for(int word = 0; word != wordList.size() - 1; word++){
+        //     System.out.println(wordList.get(word));
+        // }
     }
 
     /**
@@ -19,12 +27,15 @@ public class WordChecker {
      */
     public boolean isWordChain() {
         count = 0;
-        for(int i = 0; i == wordList.size() - 2; i++){
-            if (wordList[i+1].contains(wordList)){
+        for(int word = 1; word != wordList.size(); word++){
+            // System.out.println(wordList.get(word));
+            if (wordList.get(word).contains(wordList.get(word - 1))){
                 count++;
             }
         }
-        return count++ == wordList.size();
+        // System.out.println(count);
+        // System.out.println(wordList.size());
+        return count == wordList.size() - 1;
     }
 
     /**
@@ -36,6 +47,10 @@ public class WordChecker {
      * Items appear in the returned list in the same order as they appear in
      * wordList.
      */
-//     public ArrayList<String> createList(String target) {
-//         /* to be implemented in part (b) */ }
-// }
+    public ArrayList<String> createList(String target) {
+        for (int word = 0; word != wordList.size() - 1; word++){
+            if (wordList.get(word).contains(target)){
+                newWordList.add(wordList.get(word).substring(target.length(), wordList.get(word).length() - 1));
+            }
+        }
+}
