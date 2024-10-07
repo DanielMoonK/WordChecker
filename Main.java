@@ -38,6 +38,19 @@ public class Main{
 
         System.out.println(" ");
 
-        
+        ArrayList<String> catList = new ArrayList<String>();
+        catList.add("catch");
+        catList.add("bobcat");
+        catList.add("catchacat");
+        catList.add("cat");
+        catList.add("at");
+
+        // System.out.println(catList);
+
+        WordChecker wordCatList = new WordChecker(catList);
+
+        System.out.println(wordCatList.createList("cat"));
+        System.out.println(wordCatList.createList("catch"));
+        System.out.println(wordCatList.createList("dog"));
     }
 }
