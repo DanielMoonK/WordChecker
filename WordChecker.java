@@ -9,6 +9,10 @@ public class WordChecker {
         wordList = wList;
     }
 
+    public void printList(){
+        System.out.println(wordList);
+    }
+
     /**
      * Returns true if each element of wordList (except the first) contains the
      * previous
@@ -24,8 +28,6 @@ public class WordChecker {
                 count++;
             }
         }
-        // System.out.println(count);
-        // System.out.println(wordList.size());
         return count == wordList.size() - 1;
     }
 
