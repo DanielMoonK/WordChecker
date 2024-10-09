@@ -45,8 +45,6 @@ public class Main{
         catList.add("cat");
         catList.add("at");
 
-        // System.out.println(catList);
-
         WordChecker wordCatList = new WordChecker(catList);
 
         System.out.println(wordCatList.createList("cat"));
