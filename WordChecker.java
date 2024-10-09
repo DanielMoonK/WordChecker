@@ -9,14 +9,6 @@ public class WordChecker {
         wordList = wList;
     }
 
-    public void printList(){
-        System.out.println(wordList);
-        // System.out.println(wordList.get(1));
-        // for(int word = 0; word != wordList.size() - 1; word++){
-        //     System.out.println(wordList.get(word));
-        // }
-    }
-
     /**
      * Returns true if each element of wordList (except the first) contains the
      * previous
