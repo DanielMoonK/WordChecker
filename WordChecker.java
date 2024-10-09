@@ -4,7 +4,6 @@ public class WordChecker {
     /** Initialized in the constructor and contains no null elements */
     private ArrayList<String> wordList;
     private int count = 0;
-    private ArrayList<String> newWordList;
 
     public WordChecker(ArrayList<String> wList){
         wordList = wList;
@@ -48,13 +47,12 @@ public class WordChecker {
      * wordList.
      */
     public ArrayList<String> createList(String target) {
-        for (int word = 0; word != wordList.size() - 1; word++){
-            // System.out.println(wordList);
-            if (wordList.get(word).contains(target)){
-                newWordList.add(wordList.get(word).substring(target.length(), wordList.get(word).length() - 1));
-                // System.out.print(wordList.get(word));
-                // System.out.print(" has ");
-                // System.out.println(target);
+        ArrayList<String> newWordList = new ArrayList<String>();
+        for (int word = 0; word != wordList.size(); word++){
+            if(wordList.get(word).length() >= target.length()){
+                if (wordList.get(word).substring(0, target.length()).equals(target)){
+                    newWordList.add(wordList.get(word).substring(target.length(), wordList.get(word).length()));
+                }
             }
         }
         return newWordList;
